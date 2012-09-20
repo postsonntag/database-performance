@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<pnml>
+<net id="Net-One" type="P/T net">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<place id="currentLocks">
+<graphics>
+<position x="465.0" y="315.0"/>
+</graphics>
+<name>
+<value>currentLocks</value>
+<graphics>
+<offset x="47.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P0">
+<graphics>
+<position x="675.0" y="30.0"/>
+</graphics>
+<name>
+<value>P0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P2">
+<graphics>
+<position x="465.0" y="255.0"/>
+</graphics>
+<name>
+<value>P2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P3">
+<graphics>
+<position x="675.0" y="345.0"/>
+</graphics>
+<name>
+<value>P3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P4">
+<graphics>
+<position x="675.0" y="585.0"/>
+</graphics>
+<name>
+<value>P4</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P6">
+<graphics>
+<position x="675.0" y="150.0"/>
+</graphics>
+<name>
+<value>P6</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="unusedLocks">
+<graphics>
+<position x="480.0" y="120.0"/>
+</graphics>
+<name>
+<value>unusedLocks</value>
+<graphics>
+<offset x="51.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,5</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="waiting">
+<graphics>
+<position x="480.0" y="30.0"/>
+</graphics>
+<name>
+<value>waiting</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="begin">
+<graphics>
+<position x="675.0" y="90.0"/>
+</graphics>
+<name>
+<value>begin</value>
+<graphics>
+<offset x="56.0" y="6.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="commit">
+<graphics>
+<position x="675.0" y="675.0"/>
+</graphics>
+<name>
+<value>commit</value>
+<graphics>
+<offset x="40.0" y="40.0"/>
+</graphics>
+</name>
+<orientation>
+<value>270</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="getLock">
+<graphics>
+<position x="555.0" y="180.0"/>
+</graphics>
+<name>
+<value>getLock</value>
+<graphics>
+<offset x="81.0" y="31.0"/>
+</graphics>
+</name>
+<orientation>
+<value>180</value>
+</orientation>
+<rate>
+<value>0.8</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="goWait">
+<graphics>
+<position x="555.0" y="75.0"/>
+</graphics>
+<name>
+<value>goWait</value>
+<graphics>
+<offset x="70.0" y="-17.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.2</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="sleep">
+<graphics>
+<position x="675.0" y="450.0"/>
+</graphics>
+<name>
+<value>sleep</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T6">
+<graphics>
+<position x="360.0" y="120.0"/>
+</graphics>
+<name>
+<value>T6</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<orientation>
+<value>270</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="update">
+<graphics>
+<position x="675.0" y="255.0"/>
+</graphics>
+<name>
+<value>update</value>
+<graphics>
+<offset x="35.0" y="4.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="begin to P6" source="begin" target="P6">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="686" y="106" curvePoint="false"/>
+<arcpath id="001" x="686" y="147" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="commit to P0" source="commit" target="P0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="702" y="686" curvePoint="false"/>
+<arcpath id="001" x="793" y="688" curvePoint="false"/>
+<arcpath id="002" x="793" y="43" curvePoint="false"/>
+<arcpath id="003" x="701" y="42" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="commit to unusedLocks" source="commit" target="unusedLocks">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="672" y="686" curvePoint="false"/>
+<arcpath id="001" x="373" y="688" curvePoint="false"/>
+<arcpath id="002" x="373" y="238" curvePoint="false"/>
+<arcpath id="003" x="480" y="141" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="currentLocks to commit" source="currentLocks" target="commit">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="484" y="339" curvePoint="false"/>
+<arcpath id="001" x="682" y="681" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="currentLocks to update" source="P2" target="update">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="492" y="267" curvePoint="false"/>
+<arcpath id="001" x="671" y="267" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="getLock to currentLocks" source="getLock" target="P2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="561" y="196" curvePoint="false"/>
+<arcpath id="001" x="488" y="257" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="getLock to currentLocks" source="getLock" target="currentLocks">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="566" y="206" curvePoint="false"/>
+<arcpath id="001" x="567" y="327" curvePoint="false"/>
+<arcpath id="002" x="492" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="goWait to waiting" source="goWait" target="waiting">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="561" y="87" curvePoint="false"/>
+<arcpath id="001" x="504" y="50" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P0 to begin" source="P0" target="begin">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="686" y="56" curvePoint="false"/>
+<arcpath id="001" x="686" y="96" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P3 to sleep" source="P3" target="sleep">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="686" y="371" curvePoint="false"/>
+<arcpath id="001" x="686" y="456" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P4 to commit" source="P4" target="commit">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="687" y="611" curvePoint="false"/>
+<arcpath id="001" x="692" y="682" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P6 to currentLock" source="P6" target="getLock">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="672" y="165" curvePoint="false"/>
+<arcpath id="001" x="572" y="191" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P6 to unusedLock" source="P6" target="goWait">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="674" y="153" curvePoint="false"/>
+<arcpath id="001" x="571" y="87" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="sleep to P4" source="sleep" target="P4">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="686" y="466" curvePoint="false"/>
+<arcpath id="001" x="686" y="582" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T6 to currentLocks" source="T6" target="P2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="372" y="137" curvePoint="false"/>
+<arcpath id="001" x="467" y="255" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T6 to currentLocks" source="T6" target="currentLocks">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="357" y="131" curvePoint="false"/>
+<arcpath id="001" x="327" y="132" curvePoint="false"/>
+<arcpath id="002" x="327" y="327" curvePoint="false"/>
+<arcpath id="003" x="462" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="unusedLocks to getLock" source="unusedLocks" target="getLock">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="503" y="141" curvePoint="false"/>
+<arcpath id="001" x="562" y="186" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="unusedLocks to T6" source="unusedLocks" target="T6">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="477" y="131" curvePoint="false"/>
+<arcpath id="001" x="387" y="131" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="update to P3" source="update" target="P3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="686" y="271" curvePoint="false"/>
+<arcpath id="001" x="686" y="342" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="waiting to T6" source="waiting" target="T6">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="479" y="50" curvePoint="false"/>
+<arcpath id="001" x="372" y="127" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
